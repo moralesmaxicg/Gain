@@ -1124,8 +1124,12 @@
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                let isValid = true;
+    let isValid = true;
+    ...
+    if (!isValid) {
+        e.preventDefault(); // solo cancela si hay error
+    }
+});
                 
                 // Name validation
                 const nameInput = document.getElementById('name');
