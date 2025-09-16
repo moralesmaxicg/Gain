@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gain Imprenta - Soluciones gráficas de alta calidad con más de 10 años de experiencia en impresión digital, offset, diseño gráfico y más.">
+    <meta name="keywords" content="imprenta, impresión offset, impresión digital, diseño gráfico, señalética, packaging">
+    <title>Gain Imprenta - Soluciones Gráficas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2a44;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #f5f6fa;
+            --dark: #1a2a44;
+            --text: #2d3436;
+            --spacing: 1rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: padding 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.75rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.625rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+            margin-left: 0.25rem;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.875rem;
+        }
+        
+        .nav-menu li {
+            position: relative;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 1.875rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .contact-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .hamburger:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.875rem 2.1875rem;
+            border-radius: 1.875rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin: 0 0.9375rem;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin: 5rem 0 3.125rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 0.75rem;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 25%;
+            transition: width 0.3s ease;
+        }
+        
+        .section-title:hover h2:after {
+            width: 70%;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.1875rem;
+            margin-bottom: 5rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-0.625rem);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 2.75rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotate(15deg);
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            background-color: var(--light);
+            padding: 5rem 0;
+            margin-bottom: 5rem;
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            gap: 0.625rem;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5625rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            border-radius: 1.5625rem;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5625rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            height: 250px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            opacity: 0.8;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1.5625rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        /* About */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.125rem;
+            margin-bottom: 5rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            height: 400px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+            width: 100%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Process */
+        .process {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 5rem;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.1875rem;
+            text-align: center;
+        }
+        
+        .process-step {
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-0.625rem);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .step-number {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1.25rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin-bottom: 5rem;
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.1875rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-0.625rem);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.25rem;
+        }
+        
+        /* Contact */
+        .contact {
+            background-color: var(--light);
+            padding: 5rem 0;
+            margin-bottom: 5rem;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3.125rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5625rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5625rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #ddd;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-error {
+            color: var(--secondary);
+            font-size: 0.875rem;
+            margin-top: 0.3125rem;
+            display: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 5rem 0 2.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3.125rem;
+            margin-bottom: 3.125rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 2.5rem;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-column:hover h3:after {
+            width: 3.5rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.8125rem;
+            height: 2.8125rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: #bbb;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Image Replacement Guide */
+        .image-guide {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                gap: 1.25rem;
+            }
+            
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1.25rem;
+                gap: 0.75rem;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .about {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                margin: 0.9375rem 0;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="Gain Imprenta Home">GA <span>IN</span></a>
+            <nav class="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home" aria-label="Ir a Inicio">Inicio</a></li>
+                    <li><a href="#services" aria-label="Ir a Servicios">Servicios</a></li>
+                    <li><a href="#portfolio" aria-label="Ir a Portfolio">Portfolio</a></li>
+                    <li><a href="#about" aria-label="Ir a Nosotros">Nosotros</a></li>
+                    <li><a href="#contact" aria-label="Ir a Contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="contact-btn" aria-label="Cotizar ahora">Cotizar ahora</a>
+                <i class="fas fa-bars hamburger" aria-label="Abrir menú"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Soluciones gráficas de alta calidad</h1>
+            <p>Imprenta digital y offset con más de 10 años de experiencia. Realizamos todo tipo de trabajos gráficos con la mejor calidad y entrega puntual.</p>
+            <div>
+                <a href="#services" class="btn" aria-label="Ver nuestros servicios">Nuestros servicios</a>
+                <a href="#contact" class="btn btn-outline" aria-label="Contactarnos">Contáctanos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+        </div>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-print" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title">Impresión Offset</h3>
+                <p>Impresión de alta calidad para grandes tiradas: folletos, catálogos, revistas, libros y más.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-desktop" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title">Impresión Digital</h3>
+                <p>Ideal para tiradas cortas y trabajos urgentes. Gran calidad y entrega rápida.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cut" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title">Terminaciones</h3>
+                <p>Plastificado, troquelado, plegado, encuadernación y todos los procesos de acabado.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title">Diseño Gráfico</h3>
+                <p>Servicio de diseño profesional para crear la identidad visual de tu empresa o proyecto.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Trabajos</h2>
+            </div>
+            <div class="portfolio-filters" role="tablist">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+                <button class="filter-btn" data-filter="editorial" role="tab" aria-selected="false">Editorial</button>
+                <button class="filter-btn" data-filter="comercial" role="tab" aria-selected="false">Comercial</button>
+                <button class="filter-btn" data-filter="packaging" role="tab" aria-selected="false">Packaging</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="editorial">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                         alt="Catálogo comercial impreso por Gain Imprenta" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Catálogo Comercial</h3>
+                        <p>Diseño e impresión full color</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="comercial">
+                    <img src="https://images.unsplash.com/photo-1625768376503-68d2495d78c5?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Etiquetas autoadhesivas impresas por Gain Imprenta" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Etiquetas</h3>
+                        <p>Etiquetas autoadhesivas para productos</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="packaging">
+                    <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=815&q=80" 
+                         alt="Cajas y empaques diseñados por Gain Imprenta" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Packaging</h3>
+                        <p>Cajas y empaques personalizados</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="comercial">
+                    <img src="https://images.unsplash.com/photo-1642530026057-56d62e6adf29?q=80&w=1377&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Folletos publicitarios impresos por Gain Imprenta" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Folletos</h3>
+                        <p>Campañas publicitarias impresas</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="comercial">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_966519-MLA73715884814_012024-F.webp" 
+                         alt="Tarjetas personales impresas por Gain Imprenta" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Tarjetas Personales</h3>
+                        <p>Tarjetas con terminación de lujo</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="editorial">
+                    <img src="https://images.unsplash.com/photo-1558672904-132827295675?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Revistas corporativas impresas por Gain Imprenta" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Revistas Corporativas</h3>
+                        <p>Revistas institucionales de alta gama</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container">
+        <div class="about">
+            <img src="https://images.unsplash.com/photo-1581079289196-67865ea83118?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+
+                 alt="Equipo o instalaciones de Gain Imprenta" class="about-img" loading="lazy">       
+            <div class="about-content">
+                <h2>Nuestra Historia</h2>
+                <p>Gain Imprenta nació en 2008 con el objetivo de brindar soluciones gráficas integrales con la más alta calidad. A lo largo de estos años, hemos crecido y nos hemos modernizado, incorporando tecnología de punta y ampliando nuestros servicios.</p>
+                <p>Nuestro equipo está formado por profesionales altamente capacitados en cada área: diseño, pre-prensa, impresión y terminaciones. Trabajamos con estándares de calidad internacionales y utilizamos materiales de primera línea.</p>
+                <a href="#" class="btn" aria-label="Conocer más sobre Gain Imprenta">Conocé más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Proceso</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Consulta</h3>
+                    <p>Nos contás tu idea o proyecto y te asesoramos sobre la mejor solución.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Diseño</h3>
+                    <p>Nuestros diseñadores crean propuestas acordes a tus necesidades.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Producción</h3>
+                    <p>Fabricamos tu producto con los más altos estándares de calidad.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Entrega</h3>
+                    <p>Te entregamos el trabajo en tiempo y forma, listo para usar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Opinión de nuestros clientes</h2>
+            </div>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Trabajo con Gain Imprenta desde hace años. Siempre cumplen con los plazos de entrega y la calidad es excelente. Los recomiendo."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>María López</h4>
+                            <p>Estudio Creativo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Quedé muy satisfecho con el trabajo. El asesoramiento fue personalizado y el resultado superó mis expectativas."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Empresa XYZ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"La mejor relación precio-calidad del mercado. Rápidos, eficientes y con un trato cordial. Volveré a contratarlos."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h4>Ana Martínez</h4>
+                            <p>Tienda de Ropa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contacto</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Ubicación</h3>
+                        <p>Zapiola 2323 - Bernal Oeste</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>+54 11 5055-5653</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>infogain.cg@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Horarios</h3>
+                        <p>Lun a Vie: 9:00 - 18:00</p>
+                        <p>Sábados: 9:00 - 13:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <!-- Formspree conectado -->
+                <form id="contactForm" action="https://formspree.io/f/xqadojep" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                        <div class="form-error">Por favor ingrese su nombre</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                        <div class="form-error">Por favor ingrese un email válido</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required aria-required="true"></textarea>
+                        <div class="form-error">Por favor ingrese su mensaje</div>
+                    </div>
+
+                    <!-- Opcionales -->
+                    <input type="hidden" name="_next" value="moralesmaxicg.github.io">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <button type="submit" class="btn" aria-label="Enviar mensaje">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Gain Imprenta</h3>
+                    <p>Soluciones gráficas integrales con la más alta calidad y servicio personalizado.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Seguir a Gain Imprenta en Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Seguir a Gain Imprenta en Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Ver canal de YouTube de Gain Imprenta"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Impresión Offset</a></li>
+                        <li><a href="#">Impresión Digital</a></li>
+                        <li><a href="#">Diseño Gráfico</a></li>
+                      
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Horarios</h3>
+                    <ul>
+                        <li>Lunes a Viernes: 9:00 - 18:00</li>
+                        <li>Sábados: 9:00 - 13:00</li>
+                        <li>Domingos: Cerrado</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Gain Imprenta. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Portfolio filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Form validation
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Name validation
+                const nameInput = document.getElementById('name');
+                const nameError = nameInput.nextElementSibling;
+                if (!nameInput.value.trim()) {
+                    nameError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    nameError.style.display = 'none';
+                }
+                
+                // Email validation
+                const emailInput = document.getElementById('email');
+                const emailError = emailInput.nextElementSibling;
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailInput.value)) {
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                }
+                
+                // Message validation
+                const messageInput = document.getElementById('message');
+                const messageError = messageInput.nextElementSibling;
+                if (!messageInput.value.trim()) {
+                    messageError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    messageError.style.display = 'none';
+                }
+                
+                if (isValid) {
+                    // Form is valid, you can submit it here
+                    alert('Formulario enviado correctamente. Nos contactaremos a la brevedad.');
+                    contactForm.reset();
+                }
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
